@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-identification-form',
@@ -7,24 +7,26 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./identification-form.component.scss'],
 })
 export class IdentificationFormComponent {
-  identificationForm = new FormGroup({
-    userInfo: new FormGroup({
-      name: new FormControl(''),
-      lastname: new FormControl(''),
-      secondLastname: new FormControl(''),
-      curp: new FormControl(''),
-      rfc: new FormControl(''),
+  identificationForm = this.fb.group({
+    userInfo: this.fb.group({
+      name: [''],
+      lastname: [''],
+      secondLastname: [''],
+      curp: [''],
+      rfc: [''],
     }),
-    address: new FormGroup({
-      zip: new FormControl(''),
-      street: new FormControl(''),
-      extNum: new FormControl(''),
-      intNum: new FormControl(''),
-      state: new FormControl(''),
-      district: new FormControl(''),
-      colony: new FormControl(''),
+    address: this.fb.group({
+      zip: [''],
+      street: [''],
+      extNum: [''],
+      intNum: [''],
+      state: [''],
+      district: [''],
+      colony: [''],
     }),
   });
+
+  constructor(private fb: FormBuilder) {}
 
   onSubmit() {
     console.warn(this.identificationForm.value);
