@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,7 +15,7 @@ import { IdentificationTableComponent } from './components/identification-table/
     IdentificationFormComponent,
     IdentificationTableComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
