@@ -1,1 +1,71 @@
-<p>identification-form works!</p>
+<form [formGroup]="identificationForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="userInfo">
+    <div class="input-field">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+
+    <div class="input-field">
+      <label for="lastname">Primer apellido:</label>
+      <input type="text" id="lastname" formControlName="lastname" />
+    </div>
+
+    <div class="input-field">
+      <label for="secondLastname">Segundo apellido:</label>
+      <input type="text" id="secondLastname" formControlName="secondLastname" />
+    </div>
+
+    <div class="input-field">
+      <label for="curp">CURP:</label>
+      <input type="text" id="curp" formControlName="curp" />
+    </div>
+
+    <div class="input-field">
+      <label for="rfc">RFC (con homoclave):</label>
+      <input type="text" id="rfc" formControlName="rfc" />
+    </div>
+  </div>
+
+  <div formGroupName="address">
+    <div class="input-field">
+      <label for="zip">Código Postal:</label>
+      <input type="text" id="zip" formControlName="zip" />
+    </div>
+
+    <div class="input-field">
+      <label for="street">Calle:</label>
+      <input type="text" id="street" formControlName="street" />
+    </div>
+
+    <div class="input-field">
+      <label for="extNum">Número exterior:</label>
+      <input type="text" id="extNum" formControlName="extNum" />
+    </div>
+
+    <div class="input-field">
+      <label for="intNum">Número interior:</label>
+      <input type="text" id="intNum" formControlName="intNum" />
+    </div>
+
+    <div class="input-field">
+      <label for="state">Estado:</label>
+      <input type="text" id="state" formControlName="state" />
+    </div>
+
+    <div class="input-field">
+      <label for="district">Delegación / Municipio:</label>
+      <input type="text" id="district" formControlName="district" />
+    </div>
+
+    <div class="input-field">
+      <label for="colony">Colonia:</label>
+      <input type="text" id="colony" formControlName="colony" />
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="!identificationForm.valid">
+      Guardar
+    </button>
+  </div>
+</form>

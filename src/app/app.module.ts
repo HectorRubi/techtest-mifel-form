@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -11,12 +12,10 @@ import { IdentificationTableComponent } from './components/identification-table/
     AppComponent,
     HomeComponent,
     IdentificationFormComponent,
-    IdentificationTableComponent
+    IdentificationTableComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
