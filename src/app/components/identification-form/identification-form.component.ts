@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-identification-form',
@@ -9,7 +12,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class IdentificationFormComponent {
   private _identificationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+  ) {
     const onlyLettersRegexp = /^[a-zA-Z]+$/;
     const alphanumericRegexp = /^[0-9a-zA-Z]+$/;
     const curpRegexp = /^[A-Z][AEIOUX][A-Z]{2}[0-9]{6}[HM][A-Z]{5}[A-Z0-9]{2}$/;
@@ -73,6 +79,22 @@ export class IdentificationFormComponent {
   }
 
   onSubmit() {
-    console.warn(this.identificationForm.value);
+    Swal.fire({
+      title: 'Campos validados correctamente',
+      text: 'Desea enviar los datos al siguiente servicio?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Guardar',
+      showLoaderOnConfirm: true,
+      preConfirm: () => {
+        return this.userService.save(this._identificationForm.value);
+      },
+      allowOutsideClick: () => !Swal.isLoading(),
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Datos enviados correctamente', '', 'success');
+        this._identificationForm.reset();
+      }
+    });
   }
 }

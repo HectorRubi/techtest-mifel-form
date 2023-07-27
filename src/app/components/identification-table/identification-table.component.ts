@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from './../../services/user.service';
 
-import { UserModel } from './../../models/user.model';
+import { UserApiModel } from './../../models/user.model';
 
 @Component({
   selector: 'app-identification-table',
@@ -10,13 +10,13 @@ import { UserModel } from './../../models/user.model';
   styleUrls: ['./identification-table.component.scss'],
 })
 export class IdentificationTableComponent implements OnInit {
-  private _userList: UserModel[];
+  private _userList: UserApiModel[];
 
   constructor(private userService: UserService) {
     this._userList = [];
   }
 
-  get userList(): UserModel[] {
+  get userList(): UserApiModel[] {
     return this._userList;
   }
 
