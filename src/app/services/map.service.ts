@@ -13,7 +13,7 @@ export class MapService {
     const access_token =
       'pk.eyJ1IjoiaGVjdG9yLXJ1YmkiLCJhIjoiY2xrbGs5bXI1MDVreDNkbnh3ZDcweWQzZCJ9._LqC3GJ2tMW9LNfTpIruwA';
     return this.http.get(
-      `${url}${lat},${lng},9,0/300x200?access_token=${access_token}`,
+      `${url}${lng},${lat},9,0/300x200?access_token=${access_token}`,
       {
         responseType: 'blob',
       },
