@@ -10,10 +10,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of userList">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.website }}</td>
+      <td (click)="onRowClick(user.id)">{{ user.id }}</td>
+      <td (click)="onRowClick(user.id)">{{ user.name }}</td>
+      <td (click)="onRowClick(user.id)">{{ user.email }}</td>
+      <td (click)="onRowClick(user.id)">{{ user.website }}</td>
       <td>
         <button (click)="onEdit(user.id)">
           <app-edit-icon color="darkcyan"></app-edit-icon>

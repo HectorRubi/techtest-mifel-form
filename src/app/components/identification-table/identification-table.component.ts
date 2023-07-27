@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { MapDialogComponent } from './map-dialog/map-dialog.component';
 
 import { UserService } from './../../services/user.service';
 
@@ -53,5 +54,12 @@ export class IdentificationTableComponent implements OnInit {
   onDelete(id: number) {
     const userIndex = this._userList.findIndex((user) => user.id === id);
     this._userList.splice(userIndex, 1);
+  }
+
+  onRowClick(id: number) {
+    const user = this._userList.find((user) => user.id === id);
+    this.dialog.open(MapDialogComponent, {
+      data: { lat: user?.address.geo.lat, lng: user?.address.geo.lng },
+    });
   }
 }
