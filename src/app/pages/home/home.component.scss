@@ -4,6 +4,11 @@
   margin: 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
+  h2 {
+    text-align: center;
+    color: darkslategray;
+    font-size: 2em;
+  }
   .table {
     width: 100%;
     overflow-x: scroll;
