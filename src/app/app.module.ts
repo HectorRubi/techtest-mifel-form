@@ -10,6 +10,8 @@ import { IdentificationTableComponent } from './components/identification-table/
 import { EditIconComponent } from './components/identification-table/edit-icon/edit-icon.component';
 import { DeleteIconComponent } from './components/identification-table/delete-icon/delete-icon.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditDialogComponent } from './components/identification-table/edit-dialog/edit-dialog.component';
+import { MapDialogComponent } from './components/identification-table/map-dialog/map-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IdentificationTableComponent,
     EditIconComponent,
     DeleteIconComponent,
+    EditDialogComponent,
+    MapDialogComponent,
   ],
   imports: [
     BrowserModule,
