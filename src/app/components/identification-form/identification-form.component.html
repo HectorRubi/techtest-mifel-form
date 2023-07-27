@@ -1,5 +1,5 @@
 <form [formGroup]="identificationForm" (ngSubmit)="onSubmit()">
-  <div formGroupName="userInfo">
+  <div class="user-info" formGroupName="userInfo">
     <div class="input-field">
       <label for="name">Nombre:</label>
       <input type="text" id="name" formControlName="name" />
@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <div formGroupName="address">
+  <div class="address" formGroupName="address">
     <div class="input-field">
       <label for="zip">Código Postal:</label>
       <input type="text" id="zip" formControlName="zip" />
@@ -69,5 +69,3 @@
     </button>
   </div>
 </form>
-
-<p>Form Status: {{ identificationForm.status }}</p>
