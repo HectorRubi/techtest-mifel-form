@@ -9,6 +9,7 @@ import { IdentificationFormComponent } from './components/identification-form/id
 import { IdentificationTableComponent } from './components/identification-table/identification-table.component';
 import { EditIconComponent } from './components/identification-table/edit-icon/edit-icon.component';
 import { DeleteIconComponent } from './components/identification-table/delete-icon/delete-icon.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,12 @@ import { DeleteIconComponent } from './components/identification-table/delete-ic
     EditIconComponent,
     DeleteIconComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
