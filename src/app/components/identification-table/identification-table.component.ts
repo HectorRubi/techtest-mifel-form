@@ -25,4 +25,13 @@ export class IdentificationTableComponent implements OnInit {
       this._userList = userList;
     });
   }
+
+  onEdit(id: number) {
+    console.log(id);
+  }
+
+  onDelete(id: number) {
+    const userIndex = this._userList.findIndex((user) => user.id === id);
+    this._userList.splice(userIndex, 1);
+  }
 }
