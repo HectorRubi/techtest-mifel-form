@@ -28,6 +28,7 @@ table {
           border: none;
           border-radius: 5px;
           transition: background-color 200ms;
+          outline-color: rgb(100, 149, 237);
           &:hover {
             background-color: #bbb;
           }

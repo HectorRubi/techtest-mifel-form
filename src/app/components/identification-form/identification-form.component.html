@@ -1,12 +1,15 @@
 <form [formGroup]="identificationForm" (ngSubmit)="onSubmit()">
   <div class="user-info" formGroupName="userInfo">
-    <div class="input-field">
-      <label for="name">Nombre:</label>
+    <div class="input-field" [class.error]="name.invalid && !name.untouched">
+      <label for="name">Nombre: <span>*</span></label>
       <input type="text" id="name" formControlName="name" />
     </div>
 
-    <div class="input-field">
-      <label for="lastname">Primer apellido:</label>
+    <div
+      class="input-field"
+      [class.error]="lastname.invalid && !lastname.untouched"
+    >
+      <label for="lastname">Primer apellido: <span>*</span></label>
       <input type="text" id="lastname" formControlName="lastname" />
     </div>
 
@@ -15,50 +18,65 @@
       <input type="text" id="secondLastname" formControlName="secondLastname" />
     </div>
 
-    <div class="input-field">
-      <label for="curp">CURP:</label>
+    <div class="input-field" [class.error]="curp.invalid && !curp.untouched">
+      <label for="curp">CURP: <span>*</span></label>
       <input type="text" id="curp" formControlName="curp" />
     </div>
 
-    <div class="input-field">
-      <label for="rfc">RFC (con homoclave):</label>
+    <div class="input-field" [class.error]="rfc.invalid && !rfc.untouched">
+      <label for="rfc">RFC (con homoclave): <span>*</span></label>
       <input type="text" id="rfc" formControlName="rfc" />
     </div>
   </div>
 
   <div class="address" formGroupName="address">
-    <div class="input-field">
-      <label for="zip">Código Postal:</label>
+    <div class="input-field" [class.error]="zip.invalid && !zip.untouched">
+      <label for="zip">Código Postal: <span>*</span></label>
       <input type="text" id="zip" formControlName="zip" />
     </div>
 
-    <div class="input-field">
-      <label for="street">Calle:</label>
+    <div
+      class="input-field"
+      [class.error]="street.invalid && !street.untouched"
+    >
+      <label for="street">Calle: <span>*</span></label>
       <input type="text" id="street" formControlName="street" />
     </div>
 
-    <div class="input-field">
-      <label for="extNum">Número exterior:</label>
+    <div
+      class="input-field"
+      [class.error]="extNum.invalid && !extNum.untouched"
+    >
+      <label for="extNum">Número exterior: <span>*</span></label>
       <input type="text" id="extNum" formControlName="extNum" />
     </div>
 
-    <div class="input-field">
+    <div
+      class="input-field"
+      [class.error]="intNum.invalid && !intNum.untouched"
+    >
       <label for="intNum">Número interior:</label>
       <input type="text" id="intNum" formControlName="intNum" />
     </div>
 
-    <div class="input-field">
-      <label for="state">Estado:</label>
+    <div class="input-field" [class.error]="state.invalid && !state.untouched">
+      <label for="state">Estado: <span>*</span></label>
       <input type="text" id="state" formControlName="state" />
     </div>
 
-    <div class="input-field">
-      <label for="district">Delegación / Municipio:</label>
+    <div
+      class="input-field"
+      [class.error]="district.invalid && !district.untouched"
+    >
+      <label for="district">Delegación / Municipio: <span>*</span></label>
       <input type="text" id="district" formControlName="district" />
     </div>
 
-    <div class="input-field">
-      <label for="colony">Colonia:</label>
+    <div
+      class="input-field"
+      [class.error]="colony.invalid && !colony.untouched"
+    >
+      <label for="colony">Colonia: <span>*</span></label>
       <input type="text" id="colony" formControlName="colony" />
     </div>
   </div>

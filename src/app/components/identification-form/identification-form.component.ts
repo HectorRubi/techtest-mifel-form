@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import Swal from 'sweetalert2';
 
 import { UserService } from 'src/app/services/user.service';
@@ -76,6 +81,62 @@ export class IdentificationFormComponent {
 
   get identificationForm(): FormGroup {
     return this._identificationForm;
+  }
+
+  get name(): FormControl {
+    return this._identificationForm.get('userInfo')?.get('name') as FormControl;
+  }
+
+  get lastname(): FormControl {
+    return this._identificationForm
+      .get('userInfo')
+      ?.get('lastname') as FormControl;
+  }
+
+  get curp(): FormControl {
+    return this._identificationForm.get('userInfo')?.get('curp') as FormControl;
+  }
+
+  get rfc(): FormControl {
+    return this._identificationForm.get('userInfo')?.get('rfc') as FormControl;
+  }
+
+  get zip(): FormControl {
+    return this._identificationForm.get('address')?.get('zip') as FormControl;
+  }
+
+  get street(): FormControl {
+    return this._identificationForm
+      .get('address')
+      ?.get('street') as FormControl;
+  }
+
+  get extNum(): FormControl {
+    return this._identificationForm
+      .get('address')
+      ?.get('extNum') as FormControl;
+  }
+
+  get intNum(): FormControl {
+    return this._identificationForm
+      .get('address')
+      ?.get('intNum') as FormControl;
+  }
+
+  get state(): FormControl {
+    return this._identificationForm.get('address')?.get('state') as FormControl;
+  }
+
+  get district(): FormControl {
+    return this._identificationForm
+      .get('address')
+      ?.get('district') as FormControl;
+  }
+
+  get colony(): FormControl {
+    return this._identificationForm
+      .get('address')
+      ?.get('colony') as FormControl;
   }
 
   onSubmit() {
