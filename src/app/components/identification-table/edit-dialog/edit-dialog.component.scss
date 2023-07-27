@@ -4,15 +4,33 @@ form {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+
     label {
       color: darkcyan;
       margin-bottom: 5px;
+      span {
+        color: red;
+      }
     }
     input {
       background-color: #eaeaea;
       border: none;
       border-radius: 10px;
-      padding: 15px;
+      padding: 20px;
+      outline-color: rgb(100, 149, 237);
+    }
+
+    &.error {
+      label {
+        color: red !important;
+      }
+      input {
+        border: 1px solid red;
+        background-color: rgb(255, 223, 223);
+        &:focus {
+          outline-color: darkred;
+        }
+      }
     }
   }
 
@@ -23,6 +41,7 @@ form {
     padding: 10px 20px;
     color: white;
     cursor: pointer;
+    outline-color: rgb(28, 101, 238);
     transition: background-color 200ms;
     &:hover {
       background-color: rgb(28, 101, 238);
@@ -30,5 +49,9 @@ form {
     &:disabled {
       background-color: rgba(83, 85, 88, 0.5);
     }
+  }
+
+  .error-message {
+    color: red;
   }
 }

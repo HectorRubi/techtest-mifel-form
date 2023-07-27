@@ -1,6 +1,11 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 import { UserApiModel } from 'src/app/models/user.model';
 
@@ -28,8 +33,20 @@ export class EditDialogComponent {
     return this._editUserForm;
   }
 
+  get name(): FormControl {
+    return this._editUserForm.get('name') as FormControl;
+  }
+
+  get email(): FormControl {
+    return this._editUserForm.get('email') as FormControl;
+  }
+
+  get website(): FormControl {
+    return this._editUserForm.get('website') as FormControl;
+  }
+
   onSubmit() {
-    if (!this.editUserForm.valid) return;
+    if (this.editUserForm.invalid) return;
     this.dialogRef.close({ id: this.data.id, ...this._editUserForm.value });
   }
 }

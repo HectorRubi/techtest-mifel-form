@@ -140,6 +140,8 @@ export class IdentificationFormComponent {
   }
 
   onSubmit() {
+    if (this._identificationForm.invalid) return;
+
     Swal.fire({
       title: 'Campos validados correctamente',
       text: 'Desea enviar los datos al siguiente servicio?',

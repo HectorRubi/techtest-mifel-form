@@ -1,17 +1,27 @@
 <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
-  <div class="input-field">
-    <label for="name">Nombre:</label>
+  <div class="input-field" [class.error]="name.invalid && !name.untouched">
+    <label for="name">Nombre: <span>*</span></label>
     <input type="text" id="name" formControlName="name" />
   </div>
 
-  <div class="input-field">
-    <label for="email">Email:</label>
+  <div class="input-field" [class.error]="email.invalid && !email.untouched">
+    <label for="email">Email: <span>*</span></label>
     <input type="text" id="email" formControlName="email" />
   </div>
 
-  <div class="input-field">
-    <label for="website">Website:</label>
+  <div
+    class="input-field"
+    [class.error]="website.invalid && !website.untouched"
+  >
+    <label for="website">Website: <span>*</span></label>
     <input type="text" id="website" formControlName="website" />
+  </div>
+
+  <div
+    class="error-message"
+    *ngIf="editUserForm.invalid && editUserForm.touched"
+  >
+    <p>Existen campos sin validar</p>
   </div>
 
   <div>

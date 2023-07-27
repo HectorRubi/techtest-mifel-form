@@ -81,6 +81,13 @@
     </div>
   </div>
 
+  <div
+    class="error-message"
+    *ngIf="identificationForm.invalid && identificationForm.touched"
+  >
+    <p>Existen campos sin validar</p>
+  </div>
+
   <div>
     <button type="submit" [disabled]="!identificationForm.valid">
       Guardar
