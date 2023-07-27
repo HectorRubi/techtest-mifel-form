@@ -1,0 +1,38 @@
+table {
+  table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 586px;
+  thead {
+    tr {
+      border-bottom: 1px solid #ddd;
+      th {
+        text-align: left;
+        padding: 15px 0 15px 15px;
+        color: gray;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #ddd;
+      transition: background-color 200ms;
+      &:hover {
+        background-color: #ddd;
+      }
+      td {
+        padding: 15px 0 15px 15px;
+        button {
+          padding: 10px;
+          background-color: transparent;
+          border: none;
+          border-radius: 5px;
+          transition: background-color 200ms;
+          &:hover {
+            background-color: #bbb;
+          }
+        }
+      }
+    }
+  }
+}

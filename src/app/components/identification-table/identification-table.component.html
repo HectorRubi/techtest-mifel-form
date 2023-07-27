@@ -15,8 +15,12 @@
       <td>{{ user.email }}</td>
       <td>{{ user.website }}</td>
       <td>
-        <button (click)="onEdit(user.id)">Edit</button>
-        <button (click)="onDelete(user.id)">Delete</button>
+        <button (click)="onEdit(user.id)">
+          <app-edit-icon color="forestgreen"></app-edit-icon>
+        </button>
+        <button (click)="onDelete(user.id)">
+          <app-delete-icon color="crimson"></app-delete-icon>
+        </button>
       </td>
     </tr>
   </tbody>
