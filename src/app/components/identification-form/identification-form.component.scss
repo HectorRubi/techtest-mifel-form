@@ -22,6 +22,22 @@ form {
     gap: 20px;
     margin-bottom: 20px;
   }
+
+  button {
+    background-color: rgb(100, 149, 237);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 200ms;
+    &:hover {
+      background-color: rgb(28, 101, 238);
+    }
+    &:disabled {
+      background-color: rgba(83, 85, 88, 0.5);
+    }
+  }
 }
 
 @media (min-width: 1024px) {
